@@ -109,14 +109,14 @@
  
 include_once(dirname(dirname(__FILE__)).DIRECTORY_SEPARATOR.'phpsec'.DIRECTORY_SEPARATOR.'Math'.DIRECTORY_SEPARATOR.'BigInteger.php');
  
-include_once(dirname(dirname(__FILE__)).DIRECTORY_SEPARATOR.'phpsec'.DIRECTORY_SEPARATOR.'Crypt'.DIRECTORY_SEPARATOR.'AES.php');
+include_once(dirname(dirname(__FILE__)).DIRECTORY_SEPARATOR.'phpsec'.DIRECTORY_SEPARATOR.'Crypt'.DIRECTORY_SEPARATOR.'AES.php');   //对称加密加密算法
  
-include_once(dirname(dirname(__FILE__)).DIRECTORY_SEPARATOR.'phpsec'.DIRECTORY_SEPARATOR.'Crypt'.DIRECTORY_SEPARATOR.'RSA.php');
+include_once(dirname(dirname(__FILE__)).DIRECTORY_SEPARATOR.'phpsec'.DIRECTORY_SEPARATOR.'Crypt'.DIRECTORY_SEPARATOR.'RSA.php');  //非对称解密算法
  
 //密文
  
 $crypttext = 'v66YKULHFld2JElhm/J9qik2Edr1JHdZIc/k/OesU2GbTX2usXyvF4jGvzvoihrrE8FsfKmllmjsMIjO5fdrS/FD20bYFii4JW3BO3bzshXmz6AEs2DWwG4sK9mNojfOC0IsMoV311X5/JlgUoQXkDy4F5HHpYE9d/xGb0g2XE/hnGSSy2cpQcvQtBlBmixwSckNhsEG92lovlOz8ULwkqG5o7x+qB7P/EMII/WaFAXBJXDXvZX7lmGcOgon6wLhKJLGXorP6BIxOg6LGc6Ux7BAt3i9+0lujNgxIq/sDsl23hsr3yOUpV5C5a813nrHx4HJyd/hBT1UvIUml+eTmJwWCpSfs2cvxIUr0CE57JAZVyXjK13shK3IsZHLPPsm/JcDCrdy0Co/d5uIGJAdzXdsQ56xsju+tlvnA1J6yq2tDIfYK/x6k911A5WXLKYxztD1nq+bTYN3Gv/WFfrzVtgWQBrh06ihS2cwvna0S9EV/YPmhnAjJmrX4trNr9NXQ9xaZaW4lGRg87U5QDV+nQjj1THk0XHFc69N9g2+DsAGyEs9tK6U0ZQ72hJZqZhBCDH1UKw0PLyIhJdxpgPPOWGp8/QVVU2julTeKunvgAAEc3n+GoZfqjsCDi1S6T2MTnjWYWNoFRBhvEZFD/revgpasTOzDQa5NqR1B+mUF70r6uw6MWLJ7cT9Tz3jq+CA';
- 
+ //对称加密钥匙
 $aeskey = base64_decode('qZe60QZFxuirub2ey4+7+Q==');
  
 //AES解密，采用ECB模式
