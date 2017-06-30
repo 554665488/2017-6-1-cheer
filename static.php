@@ -228,7 +228,7 @@ $t1->study();    // 输出：我是中国人
    Test2();//1
    Test2();//2
 
-////浅析PHP的静态成员函数效率更高的原因
+////浅析PHP的静态成员函数效率更高的原因   ==============================
 class xclass{
      public static $var1 = '1111111111111111';
      public $var2 = 'aaaaaaaaaaaaa';
@@ -238,13 +238,13 @@ class xclass{
          }
      public static function secho1()
     {
-         echo self :: $var1 . '<hr />';   //静态方法只可以操作静态变量
+         echo self :: $var1 . '<hr />';   //静态方法只可以操作静态变量  因为在静态方法里不会生成$this
    
          // echo $this->var2;
          }
      public function secho2()   //非静态方法可以操作静态变量和非静态变量
     {
-    	echo self::$var1;
+    	 echo self::$var1;
          echo $this -> var2 . '<hr />';   //这里的方法体内调用非静态的属性，所以：：作用域限定操作符不可以访问该方法  只可以使用对象的实例访问  $this 作用域为对象
          }
      public function secho3()   //这里的方法声明为动态方法，没有声明为静态方法 系统依然会该方法当成静态成员
@@ -265,6 +265,12 @@ class xclass{
 
 
  //有人会担心，使用静态方法会不会造成内存占用过多，其实从上面分析可以知道，你不声明静态方法，系统依然会把成员当成静态，因此对于一个完全静态方法的类和一个完全动态但没声明实例对象的类占用内存几乎是一样的，所以对于比较直接的逻辑，都建议直接用静态成员方法，当然，一些复杂或对像化明显的逻辑，如果完全用静态类也不是没可能，但那样就失去类的意义了，如果这样，何必OOP，按用途，静态方法特别适用于MVC模式的逻辑类中。
+
+
+
+
+
+
 
  //PHP 5.0对象模型深度探索之类的静态成员
 
@@ -312,31 +318,29 @@ class xclass{
 
  //1:常量属性总是静态的 他是类的属性 与类的对象实例无关
 class Counter  
-{  
-　private static $count = 0;  
-　const VERSION = 2.0;  
-
-　function __construct()  
-　{  
-　　self::$count++;  
-　}  
-
-　function __destruct()  
-　{  
-　　self::$count--;  
-　}  
-
-　static function getCount()  
-　{
-　　return self::$count;  
-　}
+{
+	private static $count = 0;
+	const VERSON=1.1;
+	public function __construct(){
+		self::$count++;
+	}
+	public function __destruct(){
+		self::$count--;
+	}
+	static function getCount(){
+		return self::$count;
+	}
 };  
 
-// //创建一个实例，则__construct()将执行  
-// $c = new Counter();  
+//创建一个实例，则__construct()将执行  
+$c = new Counter();
 
 // //输出 1  
-// print(Counter::getCount() . "n");  
+print(Counter::getCount());  
 
 // //输出类的版本属性  
-// print("Version used: " . Counter::VERSION . "n");  
+echo Counter::VERSON;
+
+// 3.静态属性只能被初始化为一个字符值或一个常量，不能使用表达式。即使局部静态变量定义时没有赋初值，系统会自动赋初值0（对数值型变量）或空字符（对字符变量）；静态变量的初始值为0。
+
+// 全局变量本身就是静态存储方式,所有的全局变量都是静态变量
