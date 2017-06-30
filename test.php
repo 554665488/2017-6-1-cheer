@@ -1,2 +1,8 @@
 <?php
-echo date('d',strtotime('+1 month -1 day'));
+class Counter  
+{  
+　static protected  $count = 1;
+　const VERSION = 2.0;  
+
+ 
+}  
