@@ -10,13 +10,14 @@
  */
 
 /**
- * @description: 用户对象模型类
+ * @description: 用户对象控制器  活动记录的意图  一个对象，
  * @time: 2017年7月3日23:17:25
  * @Author: yfl
  * @QQ 554665488
  * Class Customer
  */
 require_once './Order.php';
+require_once './CustomerFinder.php';
 
 class Customer
 {
@@ -38,6 +39,7 @@ class Customer
      * @Author: yfl
      * @QQ 554665488
      * @param $order_id
+     * @return array
      */
     public function deleteOrder($order_id)
     {
@@ -46,7 +48,21 @@ class Customer
     }
 
     /**
-     * @description: 用户实例去创造一个订单记录 添加到数据库
+     * @author: yfl
+     * @QQ: 554665488
+     * @description:  入口类自身拥有更新的操作(比如跟新状态)
+     * @time: 2017-7-4 10:05:03
+     * @param $order_id
+     * @return array
+     */
+    public function update($order_id)
+    {
+        $orderObj = Order::returnObj(array('order_id' => $order_id, 'amount' => $this->_name, 'customer_id' => $this->_customer_id));
+        return $orderObj->update();
+    }
+
+    /**
+     * @description: 用户实例去创造一个订单记录 添加到数据库  入口类自身拥有插入操作
      * @time:2017年7月3日23:45:15
      * @Author: yfl
      * @QQ 554665488
@@ -60,7 +76,7 @@ class Customer
     }
 
     /**
-     * @description: 返回用户类的实例  加上了缓存
+     * @description: 返回用户类的实例  加上了缓存  返回的是一个人员对象
      * @time: 2017年7月3日23:55:21
      * @Author: yfl
      * @QQ 554665488
@@ -73,17 +89,30 @@ class Customer
         if (isset($objCache[$res['customer_id']])) {
             return $objCache[$res['customer_id']];
         } else {
-            $obj = new Customer($res['name'], $res['customer_id'] ? $res['customer_id'] : null);
+            $obj = new Customer($res['name'], $res['customer_id'] ? $res['customer_id'] : null);  // 1:由数据行构造一个活动记录实例;2为将来对表的插入构造一个新的实例
             return $objCache[$res['customer_id']] = !empty($obj);
         }
     }
 
-    public static function getOrderByOrderId($orderId)
+    /**
+     * @author: yfl
+     * @QQ: 554665488
+     * @description:  用户实例去查找订单
+     * @time:
+     * @param $customer_id 用户ID
+     * @return array
+     */
+    public static function find($customer_id)
     {
-       static $orderObjCache=array();
-        if(isset($orderObjCache[$orderId])){
-            return $orderObjCache[$orderId];
-        }
-
+         return CustomerFinder::find($customer_id);
     }
+    //这里还没想好怎么写
+//    public static function getOrderByOrderId($orderId)
+//    {
+//        static $orderObjCache = array();
+//        if (isset($orderObjCache[$orderId])) {
+//            return $orderObjCache[$orderId];
+//        }
+//
+//    }
 }

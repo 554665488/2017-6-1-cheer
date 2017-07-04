@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Created by PhpStorm.
  * @description:  人员查找类 给
@@ -9,6 +10,24 @@
  * Date: 2017/7/4
  * Time: 0:01
  */
-class CustomerFinder {
+require_once './Db.php';
 
+class CustomerFinder
+{
+    static $findObj;
+
+//    public function __construct()
+//    {
+//         if(isset(self::$findObj)){
+//             return  self::$findObj;
+//         }
+//         self::$findObj=new Order();
+//    }
+
+    public static function find($customer_id)
+    {
+        $sql = "SELECT * from person  WHERE customer_id=" . $customer_id;
+        $res=DB::query($sql);
+        return Customer::returnObj($res);
+    }
 }
