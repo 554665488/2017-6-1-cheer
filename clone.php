@@ -1,8 +1,13 @@
 <?php
-for($i=1000;$i--;){
-    echo $i;
-    echo '<br/>';
-}die;
+//for($i=1000;$i--;){
+//    echo $i;
+//    echo '<br/>';
+//}die;
+//for ($i=1000;$i>=0;$i--){
+//    echo $i;
+//    echo '<br/>';
+//}
+//die;
     class Account {
         public $balance;
         
@@ -28,6 +33,7 @@ for($i=1000;$i--;){
         }
         
         public function __clone() {    #复制方法,可在里面定义再clone是进行的操作
+            // $this 指的复本$person2， 而$that 是指向原本$person，这样就在本方法里，改变了复本的属性。
             $this->id = 0;
             $this->account = clone $this->account;    #不加这一句,account在clone是会只被复制引用,其中一个account的balance被修改另一个也同样会被修改
         }
