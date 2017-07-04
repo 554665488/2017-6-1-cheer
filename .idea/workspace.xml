@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2a0173cf-3473-4ec6-a843-9d900c2f36d6" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/array/array_walk_recursive.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/clone.php" afterPath="$PROJECT_DIR$/clone.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -18,16 +18,6 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="table.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/database/table/table.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="69" lean-forward="false" selection-start-line="4" selection-start-column="69" selection-end-line="4" selection-end-column="69" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="CustomerFinder.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/database/activeRecode/CustomerFinder.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -86,14 +76,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="clone.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="clone.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/clone.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="511">
-              <caret line="35" column="73" lean-forward="true" selection-start-line="35" selection-start-column="15" selection-end-line="35" selection-end-column="73" />
+            <state relative-caret-position="613">
+              <caret line="41" column="5" lean-forward="true" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
               <folding>
                 <element signature="e#6#27#0#PHP" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="array_walk_recursive.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/array/array_walk_recursive.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="9" column="28" lean-forward="false" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="28" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -155,6 +155,7 @@
         <option value="$PROJECT_DIR$/session/session1.php" />
         <option value="$PROJECT_DIR$/phpquery/QueryList.class.php" />
         <option value="$PROJECT_DIR$/clone.php" />
+        <option value="$PROJECT_DIR$/array/array_walk_recursive.php" />
       </list>
     </option>
   </component>
@@ -261,6 +262,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="array" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -492,7 +507,7 @@
       <workItem from="1496622409436" duration="338000" />
       <workItem from="1497678892668" duration="1931000" />
       <workItem from="1499050720946" duration="19425000" />
-      <workItem from="1499128785285" duration="20199000" />
+      <workItem from="1499128785285" duration="21202000" />
     </task>
     <task id="LOCAL-00001" summary="xdebug">
       <created>1497680663779</created>
@@ -515,11 +530,25 @@
       <option name="project" value="LOCAL" />
       <updated>1499153248974</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="$this 指的复本$person2， 而$that 是指向原本$person，这样就在本方法里，改变了复本的属性。">
+      <created>1499156651052</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1499156651052</updated>
+    </task>
+    <task id="LOCAL-00005" summary="PHP中$this和$that指针使用实例 $this 指的复本$person2， 而$that 是指向原本$person，">
+      <created>1499156823284</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1499156823284</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="41978000" />
+    <option name="totallyTimeSpent" value="42981000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -554,7 +583,9 @@
     <MESSAGE value="xdebug" />
     <MESSAGE value="行数据入口" />
     <MESSAGE value="phpquery采集页面数据" />
-    <option name="LAST_COMMIT_MESSAGE" value="phpquery采集页面数据" />
+    <MESSAGE value="$this 指的复本$person2， 而$that 是指向原本$person，这样就在本方法里，改变了复本的属性。" />
+    <MESSAGE value="PHP中$this和$that指针使用实例 $this 指的复本$person2， 而$that 是指向原本$person，" />
+    <option name="LAST_COMMIT_MESSAGE" value="PHP中$this和$that指针使用实例 $this 指的复本$person2， 而$that 是指向原本$person，" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -803,11 +834,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/clone.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="511">
-          <caret line="35" column="73" lean-forward="true" selection-start-line="35" selection-start-column="15" selection-end-line="35" selection-end-column="73" />
+        <state relative-caret-position="613">
+          <caret line="41" column="5" lean-forward="true" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
           <folding>
             <element signature="e#6#27#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/array/array_walk_recursive.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="28" lean-forward="false" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="28" />
+          <folding />
         </state>
       </provider>
     </entry>
